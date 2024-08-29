@@ -1,16 +1,14 @@
 import React from 'react';
 import Business from '../Business/Business'
 
-// TODO: Have it iternate over things in Buisness
-const businessList = () => {
+const businessList = ({businesses}) => {
     return (
         <div>
-            <Business />
-            <Business />
-            <Business />
-            <Business />
+          {businesses.map((business) => {
+            return <Business business={business}/>;
+          })}
         </div>
-    )
+      );
 }
 
 export default businessList
