@@ -1,5 +1,6 @@
 import React from 'react';
 import Buisness from '../Business/Business'
+import './SearchBar.css'
 
 const searchOptions = {
     "Best Match": "best_match",
@@ -11,18 +12,23 @@ const searchBar = () => {
 
     const searchByOptions= () => {
         return Object.keys(searchOptions).map((searchByOption) => 
-            <li key="searchByOption">{searchOptions[searchByOption]}</li>
+            <li key={searchOptions[searchByOption]} className="nav-item nav-link searchByOption">{searchByOption}
+            </li>
         );
     }
 
     return (
         <div>
-            <div>
-                <ul>{searchByOptions()}</ul>
+            <div class="container">
+                <header className="d-flex justify-content-center py-3 searchBarHeader">
+                    <ul className="nav nav-pills">{searchByOptions()}</ul>
+                </header>
             </div>
-            <div>
-                <input id="searchTerm" placeholder="Search Businesses"/>
-                <input id="searchLocation" placeholder="Search Location"/>
+            <div class="container">
+                <header className="d-flex justify-content-center py-3">
+                    <input placeholder="Search Businesses" className="searchInput"/>
+                    <input placeholder="Search Location" className="searchInput"/>
+                </header>
             </div>
         </div>
     )
