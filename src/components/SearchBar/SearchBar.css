@@ -1,0 +1,21 @@
+.searchInput {
+    width: 500px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 40px;
+    border-radius: 7px;
+} 
+
+header.searchBarHeader {
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px !important;
+    margin-bottom: 1rem;
+}
+
+.searchBarContainer {
+    background:tan;
+}
+
+.searchByOption {
+    cursor: pointer;
+}
