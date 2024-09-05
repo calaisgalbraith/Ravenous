@@ -30,6 +30,7 @@ const businesses = [
 function App() {
   return (
     <div>
+      <div>Ravenous</div>
       <SearchBar />
       <BusinessList businesses={businesses}/>
     </div>
