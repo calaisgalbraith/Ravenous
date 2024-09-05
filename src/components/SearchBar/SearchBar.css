@@ -11,3 +11,11 @@ header.searchBarHeader {
     padding-bottom: 5px !important;
     margin-bottom: 1rem;
 }
+
+.searchBarContainer {
+    background:tan;
+}
+
+.searchByOption {
+    cursor: pointer;
+}
