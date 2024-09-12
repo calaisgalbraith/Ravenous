@@ -74,8 +74,10 @@ const businesses = [
 function App() {
   return (
     <div className='ravenousContainer'>
-      <h1>Ravenous</h1>
-      <SearchBar />
+      <div className="headerContainer">
+        <h1>Ravenous</h1>
+        <SearchBar />
+      </div>
       <BusinessList businesses={businesses}/>
     </div>
   );
