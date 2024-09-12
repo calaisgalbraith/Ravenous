@@ -4,9 +4,9 @@ import Business from '../Business/Business'
 
 const businessList = ({businesses}) => {
     return (
-        <div className="businessListContainer">
+        <div className='businessListContainer'>
           {businesses.map((business) => {
-            return <Business business={business}/>;
+            return <Business business={business} key={business.name}/>;
           })}
         </div>
       );
