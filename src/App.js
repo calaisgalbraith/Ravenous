@@ -73,7 +73,7 @@ const businesses = [
 
 function App() {
   return (
-    <div>
+    <div className='ravenousContainer'>
       <h1>Ravenous</h1>
       <SearchBar />
       <BusinessList businesses={businesses}/>
