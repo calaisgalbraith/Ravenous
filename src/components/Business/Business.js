@@ -1,17 +1,24 @@
 import React from 'react';
+import './Business.css';
 
 const Business = ({business}) => {
     return (
-        <div>
-            <img src={business.image}/>
-            <h1>{business.name}</h1>
-            <div>
-                <p>{business.address}</p>
-                <p>{business.city}, {business.state} {business.zipcode}</p>
+        <div className='businessContainer'>
+            <div className='businessImage'>
+                <img src={business.image}/>
             </div>
-            <div>
-                <p>{business.category}</p>
-                <p>{business.rating} Stars ({business.reviewCount} Reviews)</p>
+            <h2>{business.name}</h2>
+            <div className='businessInfo'>
+                <div className='businessLocation'>
+                    <p>{business.address}</p>
+                    <p>{business.city}</p>
+                    <p>{business.state} {business.zipcode}</p>
+                </div>
+                <div className='businessReviews'>
+                    <h3>{business.category}</h3>
+                    <p className='businessRating'>{business.rating} Stars</p>
+                    <p>{business.reviewCount} Reviews</p>
+                </div>
             </div>
         </div>
     )
