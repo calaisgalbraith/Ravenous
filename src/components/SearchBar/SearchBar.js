@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import Buisness from '../Business/Business'
 import './SearchBar.css'
 
-const searchOptions = {
+const sortByOptions = {
     'Best Match': 'best_match',
     'Highest Rated': 'rating',
     'Most Reviewed': 'review_count'
 }
 
 const SearchBar = () => {
-    const searchByOptions= () => {
-        return Object.keys(searchOptions).map((searchByOption) => 
+    const sortByListOptions= () => {
+        return Object.keys(sortByOptions).map((sortByOption) => 
             <li
-                key={searchOptions[searchByOption]}
-                className='nav-item nav-link searchByOption'
+                key={sortByOptions[sortByOption]}
                 onClick={() => {
-                    handleSortOptionChange(searchOptions[searchByOption])}
+                    handleSortOptionChange(sortByOptions[sortByOption])}
                 }
+                className={getSortOptionClass(sortByOptions[sortByOption])}
             >
-            {searchByOption}
+            {sortByOption}
             </li>
         );
     }
@@ -38,6 +38,12 @@ const SearchBar = () => {
     const handleSortOptionChange = (sortOptionUpdate) => {
         setSortOption(sortOptionUpdate)
     }
+    const getSortOptionClass = (selectedOption) => { // set active class
+        if (sortOption === selectedOption) {
+          return 'nav-item nav-link sortByOption active';
+        }
+        return 'nav-item nav-link sortByOption';
+      };
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
@@ -48,7 +54,7 @@ const SearchBar = () => {
         <div className='searchBarContainer'>
             <div className='container '>
                 <header className='d-flex justify-content-center py-3 searchBarHeader'>
-                    <ul className='nav nav-pills'>{searchByOptions()}</ul>
+                    <ul className='nav nav-pills'>{sortByListOptions()}</ul>
                 </header>
             </div>
             <form className='container' onSubmit={handleSearchSubmit}>
@@ -56,7 +62,9 @@ const SearchBar = () => {
                     <input placeholder='Search Businesses' className='searchInput' onChange={handleTermChange}/>
                     <input placeholder='Search Location' className='searchInput' onChange={handleLocationChange}/>
                 </header>
-                <div><button type="submit" className="btn btn-primary">Search</button></div>
+                <div className='container buttonContainer'>
+                    <button type='submit' className='d-flex justify-content-center btn btn-primary'>Search</button>
+                </div>
             </form>
         </div>
     )
