@@ -1,3 +1,8 @@
+.searchBarContainer {
+    background-color:tan;
+    padding-bottom: 30px;
+}
+
 .searchInput {
     width: 500px;
     margin-right: 20px;
@@ -7,15 +12,21 @@
 } 
 
 header.searchBarHeader {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid black;
     padding-bottom: 5px !important;
     margin-bottom: 1rem;
 }
 
-.searchBarContainer {
-    background:tan;
+.buttonContainer {
+    display: flex;
+    justify-content: center;
 }
 
-.searchByOption {
+.sortByOption {
     cursor: pointer;
+    color: black !important;
+}
+
+.sortByOption .active {
+    color: red;
 }
