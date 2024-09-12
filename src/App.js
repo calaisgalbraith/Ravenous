@@ -24,6 +24,50 @@ const businesses = [
     category: 'Thai',  
     rating: 4.5,  
     reviewCount: 90
+  },
+  {
+    image: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'AA & Spice Thai Restaurant', 
+    address: '1933 Massachusetts Ave',  
+    city: 'Cambridge',  
+    state: 'MA',  
+    zipcode: '02140',  
+    category: 'Thai',  
+    rating: 4.5,  
+    reviewCount: 90
+  },
+  {
+    image: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'AA & Spice Thai Restaurant', 
+    address: '1933 Massachusetts Ave',  
+    city: 'Cambridge',  
+    state: 'MA',  
+    zipcode: '02140',  
+    category: 'Thai',  
+    rating: 4.5,  
+    reviewCount: 90
+  },
+  {
+    image: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'AA & Spice Thai Restaurant', 
+    address: '1933 m Ave',  
+    city: 'Cambridge',  
+    state: 'MA',  
+    zipcode: '02140',  
+    category: 'Thai',  
+    rating: 4.5,  
+    reviewCount: 90
+  },
+  {
+    image: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+    name: 'AA & Spice Thai Restaurant', 
+    address: '1933 Massachusetts Ave',  
+    city: 'Cambridge',  
+    state: 'MA',  
+    zipcode: '02140',  
+    category: 'Thai',  
+    rating: 4.5,  
+    reviewCount: 90
   }
 ]
 
