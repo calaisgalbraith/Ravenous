@@ -1,6 +1,7 @@
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar'
 import BusinessList from './components/BusinessList/BusinessList'
+import BackToTop from './components/BackToTop/BackToTop';
 
 const businesses = [
   {
@@ -74,11 +75,12 @@ const businesses = [
 function App() {
   return (
     <div className='ravenousContainer'>
-      <div className="headerContainer">
+      <div>
         <h1>Ravenous</h1>
         <SearchBar />
       </div>
       <BusinessList businesses={businesses}/>
+      <BackToTop />
     </div>
   );
 }

@@ -18,17 +18,12 @@ input:focus {
 h1 {
     padding: 0.66rem 0;
     text-align: center;
-    background-color: black;
-    font-family: Poppins, sans-serif;
+    background-color: #244857;
     color: #fff !important;
     margin: 0 !important;
 }
 
 .ravenousContainer {
-    background-color: lightslategrey;
-}
-
-.headerContainer {
-    position: sticky;
-    top: 0px;
+    background-color: #fbe9d1;;
+    font-family: Questrial;
 }
