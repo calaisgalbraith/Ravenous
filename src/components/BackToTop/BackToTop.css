@@ -1,0 +1,15 @@
+.backToTopContainer {
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    justify-content: right;
+}
+
+.backToTopContainer button {
+    margin-bottom: 15px;
+    margin-right: 25px;
+}
+
+.backToTopContainer .hideButton {
+    display: none !important;
+}
