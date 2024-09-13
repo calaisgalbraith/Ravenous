@@ -8,6 +8,16 @@
 .backToTopContainer button {
     margin-bottom: 15px;
     margin-right: 25px;
+    background-color: #244857 !important;
+    border-color: #244857;
+}
+
+.backToTopContainer button:hover, .backToTopContainer button:active{
+    border-color: #244857;
+}
+
+.backToTopContainer button:hover {
+    opacity: 90%;
 }
 
 .backToTopContainer .hideButton {

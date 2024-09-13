@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Buisness from '../Business/Business'
 import './SearchBar.css'
 
 const sortByOptions = {
