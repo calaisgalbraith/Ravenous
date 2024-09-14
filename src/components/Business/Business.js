@@ -15,7 +15,7 @@ const Business = ({business}) => {
                 <div>
                     <p className='businessRating'>{business.category}</p>
                     <p className='businessRating'>{business.rating} Stars</p>
-                    <p>{business.reviewCount} Reviews</p>
+                    <p>{business.reviews} Reviews</p>
                 </div>
             </div>
         </div>
