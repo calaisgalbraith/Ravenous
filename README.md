@@ -21,6 +21,7 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 
 ## Future Enhancements 
 * Clicking on a restaurant redirects the user to the restaurant's Yelp page.
+* Add loading animation
 * Update styling for mobile users.
 
 ##### This project is adapted from Code Academy
