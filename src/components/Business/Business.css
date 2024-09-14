@@ -22,15 +22,23 @@
     width: 100%;
 }
 
+.buisnessNameContainer {
+    text-align: center;
+}
+
+.businessName:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
 .businessContainer .businessName {
     font-size: 1.2rem;
     font-weight: 600;
-    text-align: center;
     margin: 0;
+    color: #212529 !important;
 }
 
 .businessInfo {
-    /* display: flex; */
     justify-content: space-between;
     margin: 15px;
     text-align: center;
