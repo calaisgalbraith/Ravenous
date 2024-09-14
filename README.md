@@ -16,13 +16,12 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 ## Core Features
 * A list of restaurants is displayed to the user based on results from the Yelp API.
 * Each restaurant displays an image, name, address, category, rating, and review count.
-* Users can search restaurants by location or keywords.
-* Users can sort their results by Best Match, Highest Rated, or Most Reviewed.
+* Users can search restaurants by location, keywords, best match, highest rated, and most reviewed.
 
 ## Future Enhancements 
 * Clicking on a restaurant redirects the user to the restaurant's Yelp page.
 * Add loading animation
 * Update styling for mobile users.
-* Sorting is applied to existing results when an option is clicked, rather than only when the "Search" button is clicked
+* Update styling to account for restaurants with images of non-standard sizes.
 
 ##### This project is adapted from Code Academy
