@@ -8,7 +8,7 @@ const Business = ({business}) => {
                 <img src={business.img} alt='businessPic'/>
             </div>
             <div className='buisnessNameContainer'>
-                <a className='businessName' target="_blank" href={business.url}>{business.name}</a>
+                <a className='businessName' target='_blank' rel='noopener noreferrer' href={business.url}>{business.name}</a>
             </div>
             <div className='businessInfo'>
                 <div>
