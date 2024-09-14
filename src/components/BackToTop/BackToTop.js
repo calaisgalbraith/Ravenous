@@ -11,10 +11,8 @@ function BackToTop() {
     const [buttonDisplay, setButtonDisplay] = useState('d-flex justify-content-center btn btn-primary hideButton');
     function isScrolling() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            console.log('block scroll')
             setButtonDisplay('d-flex justify-content-center btn btn-primary');
         } else {
-            console.log('none scoll')
             setButtonDisplay('d-flex justify-content-center btn btn-primary hideButton');
         }
     }
