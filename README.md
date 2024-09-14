@@ -3,7 +3,7 @@
 ## Description
 Ravenous is a web application that recommends restaurants to users based on their location and search query. This app recreates the functionality of Yelp. 
 
-View demo [here](ravenous-one-plum.vercel.app)
+View demo [here](https://ravenous-d4practgi-calaisgalbraiths-projects.vercel.app/)
 
 ## Tech Stack
 * React
