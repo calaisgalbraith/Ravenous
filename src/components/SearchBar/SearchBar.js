@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './SearchBar.css'
 
 const sortByOptions = {
@@ -48,10 +48,6 @@ const SearchBar = ({ searchYelp }) => {
         event.preventDefault();
         searchYelp(term, location, sortOption)
     }
-
-    useEffect(() => { // on load, do default search
-        searchYelp(term, location, sortOption)
-      }, []);
 
     return (
         <div className='searchBarContainer'>
