@@ -5,12 +5,12 @@ const Business = ({business}) => {
     return (
         <div className='businessContainer'>
             <div className='businessImage'>
-                <img src={business.image} alt='buisnessPic'/>
+                <img src={business.img} alt='businessPic'/>
             </div>
             <p className='businessName'>{business.name}</p>
             <div className='businessInfo'>
                 <div>
-                    <p>{business.address},{business.city}, {business.state} {business.zipcode}</p>
+                    <p>{business.address}</p>
                 </div>
                 <div>
                     <p className='businessRating'>{business.category}</p>

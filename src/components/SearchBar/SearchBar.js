@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SearchBar.css'
 
 const sortByOptions = {
@@ -7,7 +7,7 @@ const sortByOptions = {
     'Most Reviewed': 'review_count'
 }
 
-const SearchBar = () => {
+const SearchBar = ({ searchYelp }) => {
     const sortByListOptions= () => {
         return Object.keys(sortByOptions).map((sortByOption) => 
             <li
@@ -28,7 +28,7 @@ const SearchBar = () => {
         setTerm(target.value)
     }
 
-    const [location, setLocation] = useState('')
+    const [location, setLocation] = useState('us')
     const handleLocationChange = ({target}) => {
         setLocation(target.value)
     }
@@ -46,8 +46,12 @@ const SearchBar = () => {
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        console.log(`Searching ${term}, ${location}, ${sortOption}`)
+        searchYelp(term, location, sortOption)
     }
+
+    useEffect(() => { // on load, do default search
+        searchYelp(term, location, sortOption)
+      }, []);
 
     return (
         <div className='searchBarContainer'>
