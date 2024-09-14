@@ -26,5 +26,8 @@ h1 {
 .ravenousContainer {
     background-color: #fbe9d1;;
     font-family: Questrial;
+}
+
+.noResults {
     height: 100vh;
 }
