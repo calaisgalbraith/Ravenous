@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SearchBar from './components/SearchBar/SearchBar'
 import BusinessList from './components/BusinessList/BusinessList'
 import BackToTop from './components/BackToTop/BackToTop';
