@@ -23,5 +23,6 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 * Clicking on a restaurant redirects the user to the restaurant's Yelp page.
 * Add loading animation
 * Update styling for mobile users.
+* Sorting is applied to existing results when an option is clicked, rather than only when the "Search" button is clicked
 
 ##### This project is adapted from Code Academy
