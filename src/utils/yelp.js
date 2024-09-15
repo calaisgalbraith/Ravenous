@@ -7,12 +7,8 @@ const Yelp = async (query, location, sort) => {
     if (location === '') { // if location is empty, default search to US
         location = 'us'
     }
-    console.log(query)
-    console.log(location)
-    console.log(sort)
 
     const url = `${cors}${baseUrl}${searchEndpoint}?term=${query}&location=${location}&sort_by=${sort}`
-    console.log(url)
     try {
         const response = await fetch (url,
             {
