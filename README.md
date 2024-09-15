@@ -3,7 +3,7 @@
 ## Description
 Ravenous is a web application that recommends restaurants to users based on their location and search query. This app recreates the functionality of Yelp. 
 
-<img width="1422" alt="Screenshot 2024-09-14 at 1 11 40 PM" src="https://github.com/user-attachments/assets/350ca26e-fa74-4a2e-b68e-8d448a03983a">
+<img width="1393" alt="Screenshot 2024-09-14 at 8 15 57 PM" src="https://github.com/user-attachments/assets/6f41c6e8-1877-408d-86ea-a4ca07cee171">
 
 View demo [here](https://calaisg-ravenous.netlify.app/)
 
@@ -13,7 +13,7 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 * HTML
 * CSS
 * Bootstrap
-* Yelp API
+* Yelp Fusion API
 
 ## Core Features
 * A list of restaurants is displayed to the user based on results from the Yelp API.
