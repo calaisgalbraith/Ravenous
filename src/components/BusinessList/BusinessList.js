@@ -3,9 +3,9 @@ import './BusinessList.css';
 import Business from '../Business/Business'
 
 const businessList = ({businesses}) => {
-    if (!businesses) { // if buisnesses is undefined (no results)
+    if (businesses.length === 0) { // if no buisnesses (no results)
       return (
-        <div className='businessListContainer'>No Results Found.</div>
+        <div className='businessListContainer noResultsFound'>No Results Found.</div>
       );
     } else {
       return (

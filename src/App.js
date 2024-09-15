@@ -6,14 +6,16 @@ import Yelp from './utils/yelp.js'
 import './App.css';
 
 function App() {
+  const [containerStyling, setContainerStyling] = useState('ravenousContainer noResults')
   const [businesses, setBusinesses] = useState([]);
   const searchYelp = async (query, location, sort) => {
-    console.log('search yelp')
     const businessesResults = await Yelp(query, location, sort);
     setBusinesses(businessesResults);
-    // if (!suggestions) {
-    //   setShowMessage(true);
-    // }
+    if (businessesResults.length === 0) { // if no results, update styling
+      setContainerStyling('ravenousContainer noResults');
+    } else {
+      setContainerStyling('ravenousContainer');
+    }
   }
 
   useEffect(() => { // on load, do default search
@@ -21,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className='ravenousContainer'>
+    <div className={containerStyling}>
       <div>
         <h1>Ravenous</h1>
         <SearchBar searchYelp={searchYelp}/>
