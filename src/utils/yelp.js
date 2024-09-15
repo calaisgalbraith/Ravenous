@@ -3,12 +3,12 @@ const cors = "https://cors-anywhere.herokuapp.com/";
 const baseUrl = "https://api.yelp.com/v3";
 const searchEndpoint = "/businesses/search";
 
-const Yelp = async (query, location, sort) => {    console.log(location)
+const Yelp = async (query, location, sort) => {
     if (location === '') { // if location is empty, default search to US
         location = 'us'
     }
 
-    const url = `${cors}${baseUrl}${searchEndpoint}?term=${query}&location=${location}&sort_by=${sort}`;
+    const url = `${cors}${baseUrl}${searchEndpoint}?term=${query}&location=${location}&sort_by=${sort}`
     try {
         const response = await fetch (url,
             {

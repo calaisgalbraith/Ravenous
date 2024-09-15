@@ -13,7 +13,7 @@
 }
 
 .backToTopContainer button:hover, .backToTopContainer button:active{
-    border-color: #244857;
+    border-color: #244857 !important;
 }
 
 .backToTopContainer button:hover {

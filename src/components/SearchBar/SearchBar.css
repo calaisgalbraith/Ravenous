@@ -14,11 +14,6 @@
     padding-left: 15px;
 } 
 
-/* .searchInput::placeholder {
-    padding-left: 15px;
-  }
- */
-
 header.searchBarHeader {
     border-bottom: 3px solid #854c41;
     padding-bottom: 5px !important;
@@ -40,6 +35,12 @@ header.searchBarHeader {
     border-color: #244857;
     opacity: 90%;
 }
+
+.buttonContainer button:active {
+    background-color: #244857 !important;
+    border-color: #244857 !important;
+}
+
 
 .sortByOption {
     cursor: pointer;
