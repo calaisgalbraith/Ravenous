@@ -7,6 +7,8 @@ Ravenous is a web application that recommends restaurants to users based on thei
 
 View demo [here](https://calaisg-ravenous.netlify.app/)
 
+**Note:** To view the demo, users must temporarily unlock access to the CORS demo server via this link: https://cors-anywhere.herokuapp.com/corsdemo
+
 ## Tech Stack
 * React
 * JavaScript
