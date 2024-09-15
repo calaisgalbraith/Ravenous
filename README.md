@@ -25,6 +25,6 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 * Update styling for mobile users.
 * Update styling to account for restaurants with images of non-standard sizes.
 * ~~Clicking on a restaurant redirects the user to the restaurant's Yelp page.~~
-* * ~~Add loading animation~~
+* ~~Add loading animation~~
 
 ##### This project is adapted from Code Academy
