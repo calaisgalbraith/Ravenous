@@ -24,7 +24,9 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 * Clicking on a restaurant's title launches its Yelp page in a separate tab.
 
 ## Future Enhancements 
-* Update styling for mobile users.
+* Add responsive styling for mobile users.
+* Add sorting options for displayed results
+* Add "View More" option
 * Update styling to account for restaurants with images of non-standard sizes.
 * ~~Clicking on a restaurant redirects the user to the restaurant's Yelp page.~~
 * ~~Add loading animation~~
