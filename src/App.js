@@ -24,8 +24,18 @@ function App() {
     }
   }
 
+  const [term, setTerm] = useState('')
+  const handleTermChange = ({target}) => { // term(s) to search by
+      setTerm(target.value)
+  }
+
+  const [location, setLocation] = useState('us') // location option to search by
+  const handleLocationChange = ({target}) => {
+      setLocation(target.value)
+  }
+
   const [sortOption, setSortOption] = useState('best_match') // sort option to search by
-  const handleSortOptionChange = (sortOptionUpdate) => {
+  const handleSortOptionChange = (sortOptionUpdate) => { // update sortby value when selected value changes
     setSortOption(sortOptionUpdate)
   }
 
@@ -49,7 +59,15 @@ function App() {
        <div>
         {loading ? <LoadingScreen /> : '' }
         <h1>Ravenous</h1>
-        <SearchBar searchYelp={searchYelp} sortOption={sortOption} handleSortOptionChange={handleSortOptionChange}/>
+        <SearchBar
+          searchYelp={searchYelp}
+          sortOption={sortOption}
+          handleSortOptionChange={handleSortOptionChange}
+          location={location}
+          handleLocationChange={handleLocationChange}
+          term={term}
+          handleTermChange={handleTermChange}
+        />
       </div>
       <BusinessList businesses={businesses}/>
       <BackToTop />

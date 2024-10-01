@@ -7,7 +7,7 @@ const sortByOptions = {
     'Most Reviewed': 'review_count'
 }
 
-const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange }) => {
+const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange, term, handleTermChange, location, handleLocationChange }) => {
     const sortByListOptions= () => {
         return Object.keys(sortByOptions).map((sortByOption) => 
             <li
@@ -20,17 +20,6 @@ const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange }) => {
             {sortByOption}
             </li>
         );
-    }
-
-
-    const [term, setTerm] = useState('')
-    const handleTermChange = ({target}) => {
-        setTerm(target.value)
-    }
-
-    const [location, setLocation] = useState('us')
-    const handleLocationChange = ({target}) => {
-        setLocation(target.value)
     }
 
     const getSortOptionClass = (selectedOption) => { // set active class
