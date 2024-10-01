@@ -7,7 +7,7 @@ const sortByOptions = {
     'Most Reviewed': 'review_count'
 }
 
-const SearchBar = ({ searchYelp }) => {
+const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange }) => {
     const sortByListOptions= () => {
         return Object.keys(sortByOptions).map((sortByOption) => 
             <li
@@ -33,10 +33,6 @@ const SearchBar = ({ searchYelp }) => {
         setLocation(target.value)
     }
 
-    const [sortOption, setSortOption] = useState('best_match')
-    const handleSortOptionChange = (sortOptionUpdate) => {
-        setSortOption(sortOptionUpdate)
-    }
     const getSortOptionClass = (selectedOption) => { // set active class
         if (sortOption === selectedOption) {
           return 'nav-item nav-link sortByOption active';
