@@ -30,7 +30,7 @@ function BackToTop() {
     return (
         <>
             <div className='backToTopContainer'>
-                <button type='submit' onClick={handleClick} className={buttonDisplay}><i class="bi bi-chevron-up"></i></button>
+                <button type='submit' onClick={handleClick} className={buttonDisplay}><i className="bi bi-chevron-up"></i></button>
             </div>
         </>
     );
