@@ -7,7 +7,7 @@ const sortByOptions = {
     'Most Reviewed': 'review_count'
 }
 
-const SearchBar = ({ searchYelp }) => {
+const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange, term, handleTermChange, location, handleLocationChange }) => {
     const sortByListOptions= () => {
         return Object.keys(sortByOptions).map((sortByOption) => 
             <li
@@ -22,21 +22,6 @@ const SearchBar = ({ searchYelp }) => {
         );
     }
 
-
-    const [term, setTerm] = useState('')
-    const handleTermChange = ({target}) => {
-        setTerm(target.value)
-    }
-
-    const [location, setLocation] = useState('us')
-    const handleLocationChange = ({target}) => {
-        setLocation(target.value)
-    }
-
-    const [sortOption, setSortOption] = useState('best_match')
-    const handleSortOptionChange = (sortOptionUpdate) => {
-        setSortOption(sortOptionUpdate)
-    }
     const getSortOptionClass = (selectedOption) => { // set active class
         if (sortOption === selectedOption) {
           return 'nav-item nav-link sortByOption active';
