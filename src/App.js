@@ -17,10 +17,12 @@ function App() {
     const businessesResults = await Yelp(query, location, sort);
     setBusinesses(businessesResults);
     setLoading(false) //hide loader
-    if (businessesResults.length === 0) { // if no results, update styling
-      setContainerStyling('ravenousContainer noResults');
-    } else {
-      setContainerStyling('ravenousContainer');
+    if (businessesResults !== undefined) { // check cors enabled (results not undefined)
+      if (businessesResults.length === 0) { // if no results, update styling
+        setContainerStyling('ravenousContainer noResults');
+      } else {
+        setContainerStyling('ravenousContainer');
+      }
     }
   }
 
@@ -58,7 +60,7 @@ function App() {
     <div className={containerStyling}>
        <div>
         {loading ? <LoadingScreen /> : '' }
-        <h1>Ravenous</h1>
+        <h1 className='appHeader'>Ravenous</h1>
         <SearchBar
           searchYelp={searchYelp}
           sortOption={sortOption}
