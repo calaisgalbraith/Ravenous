@@ -17,11 +17,13 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 * Bootstrap
 * Yelp Fusion API
 
-## Core Features
+## Features
 * A list of restaurants is displayed to the user based on results from the Yelp API.
 * Each restaurant displays an image, name, address, category, rating, and review count.
 * Users can search restaurants by location, keywords, best match, highest rated, and most reviewed.
 * Clicking on a restaurant's title launches its Yelp page in a separate tab.
+* Loading animation
+* The application checks if the user is connected to the CORS demo server. If they are not currently connected, a modal advising them where to connect will be shown (fixes the issue of the application crashing when the user is not connected).
 
 ## Future Enhancements 
 * Add responsive styling for mobile users.
