@@ -1,0 +1,8 @@
+.modal {
+    --bs-modal-width: 600px;
+    display: block !important;
+}
+
+.modal a {
+    color: #244857;
+}

@@ -15,7 +15,7 @@ input:focus {
     outline: none;
 }
 
-h1 {
+.appHeader{
     padding: 0.66rem 0;
     text-align: center;
     background-color: #244857;

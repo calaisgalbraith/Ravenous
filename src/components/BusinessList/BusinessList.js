@@ -1,9 +1,14 @@
 import React from 'react';
 import './BusinessList.css';
 import Business from '../Business/Business'
+import Modal from '../Modal/Modal';
 
-const businessList = ({businesses}) => {
-    if (businesses.length === 0) { // if no buisnesses (no results)
+const BusinessList = ({businesses}) => {
+    if (businesses === undefined) { // if undefined (Cors not enabled)
+      return (
+        <Modal></Modal>
+      );
+    } else if (businesses.length === 0) { // if no buisnesses (no results)
       return (
         <div className='businessListContainer noResultsFound'>No Results Found.</div>
       );
@@ -18,4 +23,4 @@ const businessList = ({businesses}) => {
     }
 }
 
-export default businessList
+export default BusinessList
