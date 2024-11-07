@@ -24,12 +24,14 @@ View demo [here](https://calaisg-ravenous.netlify.app/)
 * Clicking on a restaurant's title launches its Yelp page in a separate tab.
 * Loading animation
 * The application checks if the user is connected to the CORS demo server. If they are not currently connected, a modal advising them where to connect will be shown (fixes the issue of the application crashing when the user is not connected).
+* Contains a "View More" button that allows users to load more results from their existing search
+* Back To Top button
 
 ## Future Enhancements 
 * Add responsive styling for mobile users.
-* Add sorting options for displayed results
-* Add "View More" option
+* Add sorting/filtering options for displayed results
 * Update styling to account for restaurants with images of non-standard sizes.
+* ~~Add "View More" option~~
 * ~~Clicking on a restaurant redirects the user to the restaurant's Yelp page.~~
 * ~~Add loading animation~~
 
