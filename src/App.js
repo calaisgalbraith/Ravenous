@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar/SearchBar'
 import BusinessList from './components/BusinessList/BusinessList'
 import BackToTop from './components/BackToTop/BackToTop';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen.js';
+import ViewMore from './components/ViewMore/ViewMore.js';
 import Yelp from './utils/yelp.js'
 import './App.css';
 
@@ -10,39 +11,49 @@ function App() {
   const [loading, setLoading] = useState(true); // loading screen
   const [containerStyling, setContainerStyling] = useState('ravenousContainer noResults') // show placeholder message if no results
   const [businesses, setBusinesses] = useState([]); // list of businesses
+  
+
+  // Track values for View More Btn
+  const [buttonDisplay, setButtonDisplay] = useState('btn hideButton'); // Show/Hide View More btn
+  const [currentQuery, setCurrentQuery] = useState(''); // track existing query
+  const [currentLocation, setCurrentLocation] = useState('US'); // track existing query
+  const [currentSort, setCurrentSort] = useState('best_match'); // track existing query
+  const [currentOffset, setCurrentOffset] = useState(20); // track existing query
 
   // Call Yelp API w/ search query & update list of businesses
-  const searchYelp = async (query, location, sort) => {
+  const searchYelp = async (query = currentQuery, location = currentLocation, sort = currentSort, offset = currentOffset) => {
     setLoading(true) //show loader
-    const businessesResults = await Yelp(query, location, sort);
-    setBusinesses(businessesResults);
+    const businessesResults = await Yelp(query, location, sort, offset); // get restaurants
+
+    if (offset === 0) { // if new search (search bar submit or first load)
+      setCurrentQuery(query) // update current query
+      setCurrentLocation(location) // update current location
+      setCurrentSort(sort) // update current sort
+      setCurrentOffset(20) // reset offset to 20
+      setBusinesses(businessesResults); // set business results
+    } else { // view more btn clicked
+      setCurrentOffset(prevState => prevState + 20); // increase offset
+      
+      setBusinesses([ // push new results to existing businesses 
+        ...businesses,
+        ...businessesResults
+      ]);
+    }
+    
     setLoading(false) //hide loader
     if (businessesResults !== undefined) { // check cors enabled (results not undefined)
       if (businessesResults.length === 0) { // if no results, update styling
         setContainerStyling('ravenousContainer noResults');
+        setButtonDisplay('btn hideButton') // hide View More btn
       } else {
         setContainerStyling('ravenousContainer');
+        setButtonDisplay('btn') // hide View More btn
       }
     }
   }
 
-  const [term, setTerm] = useState('')
-  const handleTermChange = ({target}) => { // term(s) to search by
-      setTerm(target.value)
-  }
-
-  const [location, setLocation] = useState('us') // location option to search by
-  const handleLocationChange = ({target}) => {
-      setLocation(target.value)
-  }
-
-  const [sortOption, setSortOption] = useState('best_match') // sort option to search by
-  const handleSortOptionChange = (sortOptionUpdate) => { // update sortby value when selected value changes
-    setSortOption(sortOptionUpdate)
-  }
-
   useEffect(() => { // on load, do default search
-    searchYelp("", "US", "best_match")
+    searchYelp(currentQuery, currentLocation, currentSort, 0) // 0 is offset
   }, []);
 
   useLayoutEffect(() => { // while loading, disable scroll
@@ -61,17 +72,10 @@ function App() {
        <div>
         {loading ? <LoadingScreen /> : '' }
         <h1 className='appHeader'>Ravenous</h1>
-        <SearchBar
-          searchYelp={searchYelp}
-          sortOption={sortOption}
-          handleSortOptionChange={handleSortOptionChange}
-          location={location}
-          handleLocationChange={handleLocationChange}
-          term={term}
-          handleTermChange={handleTermChange}
-        />
+        <SearchBar searchYelp={searchYelp} />
       </div>
       <BusinessList businesses={businesses}/>
+      <ViewMore searchYelp={searchYelp} buttonDisplay={buttonDisplay}/>
       <BackToTop />
     </div>
   );
