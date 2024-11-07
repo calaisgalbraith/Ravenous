@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './SearchBar.css'
 
 const sortByOptions = {
@@ -6,7 +7,7 @@ const sortByOptions = {
     'Most Reviewed': 'review_count'
 }
 
-const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange, term, handleTermChange, location, handleLocationChange }) => {
+const SearchBar = ({ searchYelp }) => {
     const sortByListOptions= () => {
         return Object.keys(sortByOptions).map((sortByOption) => 
             <li
@@ -26,11 +27,26 @@ const SearchBar = ({ searchYelp, sortOption, handleSortOptionChange, term, handl
           return 'nav-item nav-link sortByOption active';
         }
         return 'nav-item nav-link sortByOption';
-      };
+    };
+
+    const [term, setTerm] = useState('')
+    const handleTermChange = ({target}) => { // term(s) to search by
+        setTerm(target.value)
+    }
+  
+    const [location, setLocation] = useState('us') // location option to search by
+    const handleLocationChange = ({target}) => {
+        setLocation(target.value)
+    }
+  
+    const [sortOption, setSortOption] = useState('best_match') // sort option to search by
+    const handleSortOptionChange = (sortOptionUpdate) => { // update sortby value when selected value changes
+      setSortOption(sortOptionUpdate)
+    }
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        searchYelp(term, location, sortOption)
+        searchYelp(term, location, sortOption, 0) // 0 if offset
     }
 
     return (

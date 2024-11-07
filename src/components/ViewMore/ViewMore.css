@@ -1,0 +1,26 @@
+
+.viewMoreContainer button {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    margin-top: 1.2rem;
+    margin-right: 25px;
+    background-color: #244857 !important;
+    border-color: #244857;
+    color: #fff;
+}
+
+.viewMoreContainer {
+    text-align: center;
+}
+
+.viewMoreContainer button:hover, .viewMoreContainer button:active{
+    border-color: #244857 !important;
+}
+
+.viewMoreContainer button:hover {
+    opacity: 90%;
+}
+
+.viewMoreContainer .hideButton {
+    display: none !important;
+}
