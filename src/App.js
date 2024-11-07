@@ -14,6 +14,7 @@ function App() {
   
 
   // Track values for View More Btn
+  const [buttonDisplay, setButtonDisplay] = useState('btn hideButton'); // Show/Hide View More btn
   const [currentQuery, setCurrentQuery] = useState(''); // track existing query
   const [currentLocation, setCurrentLocation] = useState('US'); // track existing query
   const [currentSort, setCurrentSort] = useState('best_match'); // track existing query
@@ -43,8 +44,10 @@ function App() {
     if (businessesResults !== undefined) { // check cors enabled (results not undefined)
       if (businessesResults.length === 0) { // if no results, update styling
         setContainerStyling('ravenousContainer noResults');
+        setButtonDisplay('btn hideButton') // hide View More btn
       } else {
         setContainerStyling('ravenousContainer');
+        setButtonDisplay('btn') // hide View More btn
       }
     }
   }
@@ -72,7 +75,7 @@ function App() {
         <SearchBar searchYelp={searchYelp} />
       </div>
       <BusinessList businesses={businesses}/>
-      <ViewMore searchYelp={searchYelp}/>
+      <ViewMore searchYelp={searchYelp} buttonDisplay={buttonDisplay}/>
       <BackToTop />
     </div>
   );

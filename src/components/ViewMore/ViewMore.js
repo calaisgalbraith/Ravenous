@@ -1,6 +1,6 @@
 import './ViewMore.css'
 
-const ViewMore = ({searchYelp}) => {
+const ViewMore = ({searchYelp, buttonDisplay}) => {
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -10,7 +10,7 @@ const ViewMore = ({searchYelp}) => {
     return (
         <>
             <div className='viewMoreContainer'>
-                <button className="btn" onClick={handleClick}>View More</button>
+                <button className={buttonDisplay} onClick={handleClick}>View More</button>
             </div>
         </>
     );
