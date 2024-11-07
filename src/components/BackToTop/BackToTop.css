@@ -6,10 +6,12 @@
 }
 
 .backToTopContainer button {
-    margin-bottom: 15px;
-    margin-right: 25px;
+    bottom: 2rem;
+    right: 2rem;
+    position: absolute;
     background-color: #244857 !important;
     border-color: #244857;
+    font-size: 1.6rem;
 }
 
 .backToTopContainer button:hover, .backToTopContainer button:active{
