@@ -53,12 +53,8 @@ function App() {
   }
 
   useEffect(() => { // on load, do default search
-    firstCall()
+    searchYelp('', 'US', 'best_match', 0) // 0 is offset
   }, []);
-
-  function firstCall () { // function for first API call on load (added bc yelp call in useEffect breaks neltify)
-    searchYelp(currentQuery, currentLocation, currentSort, 0) // 0 is offset
-  }
 
   useLayoutEffect(() => { // while loading, disable scroll
     if (loading) {
