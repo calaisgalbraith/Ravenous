@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import SearchBar from './components/SearchBar/SearchBar'
 import BusinessList from './components/BusinessList/BusinessList'
 import BackToTop from './components/BackToTop/BackToTop';
@@ -52,9 +52,18 @@ function App() {
     }
   }
 
-  useEffect(() => { // on load, do default search
-    searchYelp('', 'US', 'best_match', 0) // 0 is offset
-  }, []);
+  // on first load, call yelp API w/ default values
+  const useInit = initCallback => {
+    const [initialized, setInitialized] = useState(false);
+  
+    if (!initialized) {
+      initCallback();
+      setInitialized(true); // after first call, don't call again
+      searchYelp('', 'US', 'best_match', 0) // 0 is offset
+    }
+  };
+
+  useInit(() => {});
 
   useLayoutEffect(() => { // while loading, disable scroll
     if (loading) {
